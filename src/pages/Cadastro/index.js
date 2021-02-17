@@ -26,12 +26,9 @@ export default function Cadastro() {
         <Image source={require('../Cadastro/dogs.png')} style={styles.logo}>
         </Image>
 
-        <Text style={styles.texto}>Adote um vira-lata!</Text>
-        <StatusBar style="auto" />
-
         <TextInput 
           style={styles.input}
-          placeholder="Digite seu usuário" onChangeText = {text => setNome(text)}/>
+          placeholder="Digite seu nome" onChangeText = {text => setNome(text)}/>
 
         <TextInput 
           style={styles.input}
