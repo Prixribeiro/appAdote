@@ -10,7 +10,7 @@ export default function Cadastro() {
 
   return (
     <KeyboardAvoidingView 
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    behavior={"padding"}
     style={styles.container}>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
@@ -18,9 +18,6 @@ export default function Cadastro() {
           
           <Image source={require('../Cadastro/dogs.png')} style={styles.logo}>
           </Image>
-
-          <Text style={styles.texto}>Adote um vira-lata!</Text>
-          <StatusBar style="auto" />
 
           <TextInput 
             style={styles.input}
@@ -56,11 +53,12 @@ const styles = StyleSheet.create({
     fontWeight: "500"
   },
   logo: {
-    margin: 20,
-    padding: 20,
-    width: 250,
-    height: 250,
-    borderRadius:50
+    margin: 0,
+    padding: 10,
+    width: 180,
+    height: 180,
+    borderRadius:50,
+    position: 'relative'
   },
   input: {
     marginTop: 20,

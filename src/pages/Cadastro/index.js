@@ -17,11 +17,10 @@ export default function Cadastro() {
 
   return (
     <KeyboardAvoidingView 
-    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    behavior={"padding"}
     style={styles.container}>
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
-        <StatusBar hidden />
         
         <Image source={require('../Cadastro/dogs.png')} style={styles.logo}>
         </Image>
@@ -63,10 +62,10 @@ const styles = StyleSheet.create({
     fontWeight: "500"
   },
   logo: {
-    margin: 20,
-    padding: 20,
-    width: 250,
-    height: 250,
+    margin: 10,
+    padding: 10,
+    width: 180,
+    height: 180,
     borderRadius:50
   },
   input: {

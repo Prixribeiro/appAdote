@@ -36,7 +36,7 @@ function App() {
         <NavigationContainer>
             <Stack.Navigator >
                 <Stack.Screen name="Home" component={CreateNavTab} 
-                options={{title: 'Adote um vira-lata!',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: 'bold',},}}/>
+                options={{title: 'Adote e transforme uma vida!',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: 'bold',},}}/>
                 <Stack.Screen name="Sobre" component={Sobre} />
                 <Stack.Screen name="Cadastro" component={Cadastro} 
                 options={{title: 'Cadastre-se',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: 'bold',},}}/>
