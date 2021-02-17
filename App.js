@@ -1,65 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button, Alert } from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      
-      <Image source={require('./assets/dogs.png')} style={styles.logo}>
-      </Image>
+import Home from './src/pages/Home';
+import Sobre from './src/pages/Sobre';
+import Cadastro from './src/pages/Cadastro';
+import Feed from './src/pages/Feed';
+import Login from './src/pages/Login';
 
-      <Text style={styles.texto}>Adote um vira-lata!</Text>
-      <StatusBar style="auto" />
+const Tab = createBottomTabNavigator();
+const Stack  = createStackNavigator()
 
-      <TextInput 
-        style={styles.input}
-        placeholder="Digite seu usuário" />
+function App() {
+    CreateNavTab = () => (
+      <Tab.Navigator initialRouteName="Home" tabBarOptions={{activeTintColor: '#FFA07A'}}>
+        <Tab.Screen name="Home" component={Home}   
+        options={{tabBarLabel: 'Home', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="home" color={color} size={size} />),
+    }} />
+        <Tab.Screen name="Sobre" component={Sobre} 
+        options={{tabBarLabel: 'Sobre', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="charity" color={color} size={size} />),
+    }}/>
+        <Tab.Screen name="Login" component={Login} 
+        options={{tabBarLabel: 'login', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="account" color={color} size={size} />),
+    }}/>
+        <Tab.Screen name="Feed" component={Feed} 
+        options={{tabBarLabel: 'Feed', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="dog" color={color} size={size} />),
+    }}/>
+      </Tab.Navigator>
+    );
+  
+    return(
+        <NavigationContainer>
+            <Stack.Navigator >
+                <Stack.Screen name="Home" component={CreateNavTab} 
+                options={{title: 'Adote',headerStyle: {backgroundColor: '#FFA07A',},headerTintColor: '#fff',headerTitleStyle: {fontWeight: 'bold',},}}/>
+                <Stack.Screen name="Sobre" component={Sobre} />
+                <Stack.Screen name="Cadastro" component={Cadastro} />
+                <Stack.Screen name="Login" component={Login} />
+                <Stack.Screen name="Feed" component={Feed} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+    }
 
-      <TextInput 
-        style={styles.input}
-        placeholder="Digite sua senha" 
-        secureTextEntry={true}/>
-
-      <Button
-        title="Entrar"
-        color="#FE434C"
-        
-      />
-
-    </View>
-
-    
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'salmon',
-    alignItems: 'center',
-    justifyContent: 'center',
-    fontFamily:'verdana'
-  },
-  texto: {
-    fontSize: 20,
-    fontWeight: "500"
-  },
-  logo: {
-    margin: 20,
-    padding: 20,
-    width: 250,
-    height: 250,
-    borderRadius:50
-  },
-  input: {
-    marginTop: 20,
-    padding: 10,
-    width: 300,
-    backgroundColor: '#fff',
-    fontSize: 15,
-    borderRadius: 50
-  }
-
-});
-
+export default App;
