@@ -10,9 +10,8 @@ export default function Cadastro() {
   const [senha, setSenha] = useState('');
 
   const cadastro = () => {
-    alert(nome);
-    alert(email);
-    alert(senha);
+    alert("Cadastro realizado com sucesso!");
+    
   }
 
   return (

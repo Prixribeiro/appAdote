@@ -24,7 +24,7 @@ function App() {
         options={{tabBarLabel: 'Sobre', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="charity" color={color} size={size} />),
     }}/>
         <Tab.Screen name="Login" component={Login} 
-        options={{tabBarLabel: 'login', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="account" color={color} size={size} />),
+        options={{tabBarLabel: 'Login', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="account" color={color} size={size} />),
     }}/>
         <Tab.Screen name="Feed" component={Feed} 
         options={{tabBarLabel: 'Feed', tabBarIcon: ({ color, size }) => (<MaterialCommunityIcons name="dog" color={color} size={size} />),
