@@ -16,7 +16,6 @@ export default function Home(props){
                     Dê uma nova chance para você e para o seu novo melhor amigo.{"\n"}{"\n"}
                     <Text style={styles.titulo}>Adote ou Apadrinhe um PET.</Text> 
                 </Text> 
-                
             </View>
             <View style={styles.views}>
             

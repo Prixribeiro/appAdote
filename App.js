@@ -35,11 +35,11 @@ function App() {
     return(
         <NavigationContainer>
             <Stack.Navigator >
-                <Stack.Screen name="Home" component={CreateNavTab} 
-                options={{title: 'Adote e transforme uma vida!',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: 'bold',},}}/>
+                <Stack.Screen name=" " component={CreateNavTab} 
+                options={{headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',}}/>
                 <Stack.Screen name="Sobre" component={Sobre} />
                 <Stack.Screen name="Cadastro" component={Cadastro} 
-                options={{title: 'Cadastre-se',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: 'bold',},}}/>
+                options={{title: 'Acompanhe nossos resgates',headerStyle: {backgroundColor: '#FFE4E1',},headerTintColor: '#000',headerTitleStyle: {fontWeight: '300',},}}/>
                 <Stack.Screen name="Login" component={Login} />
                 <Stack.Screen name="Feed" component={Feed} />
             </Stack.Navigator>
