@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, KeyboardAvoidingView, TouchableWithoutFeedback,Keyboard} from 'react-native';
 
 
 export default function Cadastro() {
@@ -16,35 +16,39 @@ export default function Cadastro() {
   }
 
   return (
-    
-    <View style={styles.container}>
-      <StatusBar hidden />
-      
-      <Image source={require('../Cadastro/dogs.png')} style={styles.logo}>
-      </Image>
+    <KeyboardAvoidingView 
+    behavior={Platform.OS === "ios" ? "padding" : "height"}
+    style={styles.container}>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <View style={styles.container}>
+        <StatusBar hidden />
+        
+        <Image source={require('../Cadastro/dogs.png')} style={styles.logo}>
+        </Image>
 
-      <Text style={styles.texto}>Adote um vira-lata!</Text>
-      <StatusBar style="auto" />
+        <Text style={styles.texto}>Adote um vira-lata!</Text>
+        <StatusBar style="auto" />
 
-      <TextInput 
-        style={styles.input}
-        placeholder="Digite seu usuário" onChangeText = {text => setNome(text)}/>
+        <TextInput 
+          style={styles.input}
+          placeholder="Digite seu usuário" onChangeText = {text => setNome(text)}/>
 
-      <TextInput 
-        style={styles.input}
-        placeholder="Digite seu email" onChangeText = {text => setEmail(text)}/>
+        <TextInput 
+          style={styles.input}
+          placeholder="Digite seu email" onChangeText = {text => setEmail(text)}/>
 
-      <TextInput 
-        style={styles.input}
-        placeholder="Digite sua senha" onChangeText = {text => setSenha(text)}
-        secureTextEntry={true}/>
+        <TextInput 
+          style={styles.input}
+          placeholder="Digite sua senha" onChangeText = {text => setSenha(text)}
+          secureTextEntry={true}/>
 
-      <TouchableOpacity style = {styles.btncadastro} onPress={() => cadastro()}>
-        <Text style = {styles.btntexto}>Cadastrar</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style = {styles.btncadastro} onPress={() => cadastro()}>
+          <Text style = {styles.btntexto}>Cadastrar</Text>
+        </TouchableOpacity>
 
-    </View>
-
+      </View>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
     
   );
 }
